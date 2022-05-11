@@ -25,34 +25,36 @@ MAIL_RECV_CACHE = '%s/cache/mail_recvs.dat' % config.PRJ_DIR
 def to_mail(gtk, cves, smtp, sender, password):
     content = format_content(cves)
     receivers = load_local_receivers()
-    if gtk:
-        log.info('[邮件] 正在通过 Github Actions 推送威胁情报...')
-        recvs = load_issue_receivers(gtk)
-        recvs.update(receivers)
-        to_cache(','.join(recvs), MAIL_RECV_CACHE)
-        to_cache(content, MAIL_CONTENT_CACHE)
+    # if gtk:
+    #     log.info('[邮件] 正在通过 Github Actions 推送威胁情报...')
+    #     recvs = load_issue_receivers(gtk)
+    #     recvs.update(receivers)
+    #     to_cache(','.join(recvs), MAIL_RECV_CACHE)
+    #     to_cache(content, MAIL_CONTENT_CACHE)
 
-    else:
-        log.info('[邮件] 正在推送威胁情报...')
-        email = MIMEText(content, 'html', config.CHARSET)     # 以 html 格式发送邮件内容
-        email['From'] = sender
-        email['To'] = ', '.join(receivers)                  # 此处收件人列表必须为逗号分隔的 str
-        log.info('[邮件] 收件人清单： %s' % receivers)
-        subject = '威胁情报播报'
-        email['Subject'] = Header(subject, 'utf-8')
+    # else:
+    log.info('[邮件] 正在推送威胁情报...')
+    email = MIMEText(content, 'html', config.CHARSET)     # 以 html 格式发送邮件内容
+    email['From'] = sender
+    # 此处收件人列表必须为逗号分隔的 str
+    email['To'] = ', '.join(receivers)
+    log.info('[邮件] 收件人清单： %s' % receivers)
+    subject = '威胁情报播报'
+    email['Subject'] = Header(subject, 'utf-8')
 
-        try:
-            smtpObj = smtplib.SMTP(smtp)
-            smtpObj.login(sender, password)
-            smtpObj.sendmail(sender, receivers, email.as_string())  # 此处收件人列表必须为 list
-            log.info('[邮件] 推送威胁情报成功')
-        except:
-            log.error('[邮件] 推送威胁情报失败')
+    try:
+        smtpObj = smtplib.SMTP(smtp)
+        smtpObj.login(sender, password)
+        # 此处收件人列表必须为 list
+        smtpObj.sendmail(sender, receivers, email.as_string())
+        log.info('[邮件] 推送威胁情报成功')
+    except:
+        log.error('[邮件] 推送威胁情报失败')
 
 
 def format_content(cves):
     src_tpl = '    <li><font color="red">%(cnt)d</font>条由 [<a href="%(url)s">%(src)s</a>] 提供</li>'
-    mail_tpl =  '''
+    mail_tpl = '''
 <h3>发现最新威胁情报<font color="red">%(total)d</font>条：</h3>
 <ul>
 %(src_infos)s
@@ -106,10 +108,11 @@ def load_local_receivers():
 
 def load_issue_receivers(gtk):
     recvs = set()
-    try: 
+    try:
         issues = _git.query_issues(gtk)
-        for issue in issues :
-            ptn = re.compile(r'([a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+)')
+        for issue in issues:
+            ptn = re.compile(
+                r'([a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+)')
             emails = ptn.findall(issue)
             for email in emails:
                 recvs.add(email[0])
