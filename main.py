@@ -34,7 +34,7 @@ def args() :
         description='从多个公开的威胁情报来源爬取并整合最新信息',  
         epilog='\r\n'.join([
             '使用示例: ', 
-            '  python main.py -t 10 --gtk {GRAPAQL_TOKEN}', 
+            '  python main.py -t 10 --gtk {GRAPHQL_TOKEN}', 
         ])
     )
     parser.add_argument('-t', '--top', dest='top', type=int, default=30, help='播报时每个来源最多取最新的前 N 个 CVE')
