@@ -14,7 +14,7 @@
 
   <div>
    <br />
-   <h2><a href="https://exp-blog.com" target="_blank">眈眈探求</a> | <a href="https://github.com/lyy289065406/threat-broadcast">威胁情报播报</a></h2>
+   <h2><a href="https://exp-blog.com" target="_blank">眈眈探求</a> | <a href="https://github.com/binlep/threat-broadcast">威胁情报播报</a></h2>
    <br />
 
 %(table)s
@@ -24,22 +24,6 @@
   <br />
   <br />
   <br />
-
-  <h2><font color="red">赞助途径</font></h2>
-  <div style="text-align: center;">
-    <table id="donate" style="margin: auto;">
-      <tbody>
-        <tr>
-          <th><img src="imgs/alipay.png"/></th>
-          <th><img src="imgs/wechat.png"/></th>
-        </tr>
-        <tr>
-          <td style="text-align: center;">支付宝</td>
-          <td style="text-align: center;">微信</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
   <br />
  </body>
 </html>
