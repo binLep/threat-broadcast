@@ -27,28 +27,36 @@ import src.notice.wechat as wechat
 import src.utils._git as git
 
 
-def args() :
+def args():
     parser = argparse.ArgumentParser(
-        prog='', # 会被 usage 覆盖
-        usage='威胁情报播报 - 帮助信息',  
-        description='从多个公开的威胁情报来源爬取并整合最新信息',  
+        prog='',  # 会被 usage 覆盖
+        usage='威胁情报播报 - 帮助信息',
+        description='从多个公开的威胁情报来源爬取并整合最新信息',
         epilog='\r\n'.join([
-            '使用示例: ', 
-            '  python main.py -t 10 --gtk {GRAPHQL_TOKEN}', 
+            '使用示例: ',
+            '  python main.py -t 10 --gtk {GRAPHQL_TOKEN}',
         ])
     )
-    parser.add_argument('-t', '--top', dest='top', type=int, default=30, help='播报时每个来源最多取最新的前 N 个 CVE')
-    parser.add_argument('-ac', '--auto_commit', dest='auto_commit', action='store_true', default=False, help='自动提交变更到仓库（因使用 Github Actions ，故默认关闭）')
-    parser.add_argument('-k', '--gtk', dest='gtk', type=str, default='', help='Github Token，若非空值则使用 Github Actions 发送播报邮件')
-    parser.add_argument('-ms', '--mail_smtp', dest='mail_smtp', type=str, default='smtp.qq.com', help='用于发送播报信息的邮箱 SMTP 服务器')
-    parser.add_argument('-mu', '--mail_user', dest='mail_user', type=str, default='threatbroadcast@qq.com', help='用于发送播报信息的邮箱账号')
-    parser.add_argument('-mp', '--mail_pass', dest='mail_pass', type=str, default='', help='用于发送播报信息的邮箱密码')
-    parser.add_argument('-qu', '--qq_user', dest='qq_user', type=str, default='', help='用于向 QQ 群发送播报信息的 QQ 账号')
-    parser.add_argument('-qp', '--qq_pass', dest='qq_pass', type=str, default='', help='用于发送播报信息的 QQ 密码')
+    parser.add_argument('-t', '--top', dest='top', type=int,
+                        default=30, help='播报时每个来源最多取最新的前 N 个 CVE')
+    parser.add_argument('-ac', '--auto_commit', dest='auto_commit', action='store_true',
+                        default=False, help='自动提交变更到仓库（因使用 Github Actions ，故默认关闭）')
+    parser.add_argument('-k', '--gtk', dest='gtk', type=str,
+                        default='', help='Github Token，若非空值则使用 Github Actions 发送播报邮件')
+    parser.add_argument('-ms', '--mail_smtp', dest='mail_smtp',
+                        type=str, default='smtp.qq.com', help='用于发送播报信息的邮箱 SMTP 服务器')
+    parser.add_argument('-mu', '--mail_user', dest='mail_user', type=str,
+                        default='threatbroadcast@qq.com', help='用于发送播报信息的邮箱账号')
+    parser.add_argument('-mp', '--mail_pass', dest='mail_pass',
+                        type=str, default='', help='用于发送播报信息的邮箱密码')
+    parser.add_argument('-qu', '--qq_user', dest='qq_user',
+                        type=str, default='', help='用于向 QQ 群发送播报信息的 QQ 账号')
+    parser.add_argument('-qp', '--qq_pass', dest='qq_pass',
+                        type=str, default='', help='用于发送播报信息的 QQ 密码')
     return parser.parse_args()
 
 
-def get_args(args) :
+def get_args(args):
     top = args.top or settings.crawler['top']
     auto_commit = args.auto_commit or settings.github['auto_commit']
     gtk = args.gtk or settings.github['gtk']
@@ -57,7 +65,7 @@ def get_args(args) :
     mail_pass = args.mail_pass or settings.notify['mail_pass']
     qq_user = args.qq_user or settings.notify['qq_user']
     qq_pass = args.qq_pass or settings.notify['qq_pass']
-    return [ top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pass ]
+    return [top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pass]
 
 
 def init():
@@ -67,17 +75,17 @@ def init():
 
 def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pass):
     all_cves = {}
-    srcs = [ 
-        Cert360(), 
-        Nsfocus(), 
-        QiAnXin(), 
-        RedQueen(), 
+    srcs = [
+        Cert360(),
+        Nsfocus(),
+        QiAnXin(),
+        RedQueen(),
         # AnQuanKe(),   # 已经不做 CVE 分析了
-        Vas(), 
-        NVD(), 
+        Vas(),
+        NVD(),
         # CNVD(),       # 不断升级反爬机制，尊重平台
-        CNNVD(), 
-        Tenable() 
+        CNNVD(),
+        Tenable()
     ]
     for src in srcs:
         cves = src.cves()
@@ -96,16 +104,10 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
 
 
 def to_log(cves):
-    for cve in cves :
+    for cve in cves:
         log.info(cve.to_msg())
-
 
 
 if __name__ == '__main__':
     init()
     main(*get_args(args()))
-
-
-
-
-
