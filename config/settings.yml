@@ -17,6 +17,6 @@ notify:
   mail_smtp: 'smtp.qq.com'
   mail_user: 'cvebroadcast@qq.com'     # 用于发送播报信息的邮箱账号
   mail_pass: "<%= ENV['MAIL_PASS'] %>"
-  qq_user: '123742030'                    # 用于向 QQ 群发送播报信息的 QQ 账号
+  qq_user: ''                    # 用于向 QQ 群发送播报信息的 QQ 账号
   qq_pass: "<%= ENV['QQ_PASS'] %>"
 
