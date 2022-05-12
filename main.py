@@ -95,8 +95,6 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
 
     if all_cves:
         page.to_page(top)
-        print(mail_smtp, end=" ")
-        print(mail_user)
         mail.to_mail(gtk, all_cves, mail_smtp, mail_user, mail_pass)
         qq.to_group(all_cves, qq_user, qq_pass)
         wechat.to_wechat(all_cves)
