@@ -93,8 +93,6 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
             to_log(cves)
             all_cves[src] = cves
 
-    print(mail_smtp)
-    print(mail_user)
     if all_cves:
         page.to_page(top)
         mail.to_mail(gtk, all_cves, mail_smtp, mail_user, mail_pass)
