@@ -25,6 +25,7 @@ import src.notice.mail as mail
 import src.notice.qq as qq
 import src.notice.wechat as wechat
 import src.utils._git as git
+import hashlib
 
 
 def args():
@@ -87,13 +88,14 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
         CNNVD(),
         Tenable()
     ]
-    for src in srcs:
-        cves = src.cves()
-        if cves:
-            to_log(cves)
-            all_cves[src] = cves
+    # for src in srcs:
+    #     cves = src.cves()
+    #     if cves:
+    #         to_log(cves)
+    #         all_cves[src] = cves
     print("Test Start")
-    mail.to_mail(gtk, all_cves, mail_smtp, mail_user, mail_pass)#!TODO
+    print("1 : " + hashlib.md5(gtk).hexdigest())
+    print("2 : " + hashlib.md5(mail_pass).hexdigest())
     print("Test Over")
     if all_cves:
         page.to_page(top)
