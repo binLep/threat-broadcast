@@ -94,8 +94,8 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
     #         to_log(cves)
     #         all_cves[src] = cves
     print("Test Start")
-    print("1 : " + hashlib.md5(gtk).hexdigest())
-    print("2 : " + hashlib.md5(mail_pass).hexdigest())
+    print("1 : " + hashlib.md5(gtk.encode('utf-8')).hexdigest())
+    print("2 : " + hashlib.md5(mail_pass.encode('utf-8')).hexdigest())
     print("Test Over")
     if all_cves:
         page.to_page(top)
