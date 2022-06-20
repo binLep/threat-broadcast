@@ -6,14 +6,15 @@
 # 通过邮件发送威胁情报
 # -----------------------------------------------
 
-import os
-import re
-import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-import src.config as config
 from color_log.clog import log
+import src.config as config
 from src.utils import _git
+import smtplib
+import ssl
+import os
+import re
 
 MAIL_TPL_PATH = '%s/tpl/mail.tpl' % config.PRJ_DIR
 MAIL_RECV_DIR = '%s/recv' % config.PRJ_DIR
@@ -44,10 +45,11 @@ def to_mail(gtk, cves, smtp, sender, password):
     email['Subject'] = Header(subject, 'utf-8')
 
     try:
-        smtpObj = smtplib.SMTP(host=smtp, port=587)
-        smtpObj.login(sender, password)
+        with smtplib.SMTP(host=smtp, port=587) as smtpObj:
+            smtpObj.starttls(context=ssl.create_default_context())
+            smtpObj.login(sender, password)
+            smtpObj.sendmail(sender, receivers, email.as_string())
         # 此处收件人列表必须为 list
-        smtpObj.sendmail(sender, receivers, email.as_string())
         log.info('[邮件] 推送威胁情报成功')
     except:
         log.error('[邮件] 推送威胁情报失败')
