@@ -44,7 +44,7 @@ def to_mail(gtk, cves, smtp, sender, password):
     email['Subject'] = Header(subject, 'utf-8')
 
     try:
-        smtpObj = smtplib.SMTP(smtp)
+        smtpObj = smtplib.SMTP(host=smtp, port=587)
         smtpObj.login(sender, password)
         # 此处收件人列表必须为 list
         smtpObj.sendmail(sender, receivers, email.as_string())
