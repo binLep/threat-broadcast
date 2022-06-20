@@ -23,7 +23,8 @@ MAIL_RECV_CACHE = '%s/cache/mail_recvs.dat' % config.PRJ_DIR
 
 
 def to_mail(gtk, cves, smtp, sender, password):
-    content = format_content(cves)
+    #content = format_content(cves)#!TODO
+    content = "test"
     receivers = load_local_receivers()
     # if gtk:
     #     log.info('[邮件] 正在通过 Github Actions 推送威胁情报...')
