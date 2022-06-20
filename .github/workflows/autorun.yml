@@ -38,7 +38,8 @@ jobs:
 
       - name: Crawl CVEs
         run: |-
-          python main.py --gtk ${{ secrets.GRAPHQL_TOKEN }} -ms smtp.qq.com -mu cvebroadcast@qq.com -mp secrets.MAIL_PASS
+          python main.py --gtk ${{ secrets.GRAPHQL_TOKEN }} -ms ${{ secrets.MAIL_SMTP }} \
+                         -mu ${{ secrets.MAIL_USER }} -mp ${{ secrets.MAIL_PASS }}
 
       # 若该时间段没有 CVE， 则 file://cache/mail.dat 文件不会生成，此时不会发送邮件
       # - name: Send mail
