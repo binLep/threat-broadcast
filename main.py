@@ -87,12 +87,12 @@ def main(top, auto_commit, gtk, mail_smtp, mail_user, mail_pass, qq_user, qq_pas
         CNNVD(),
         Tenable()
     ]
-    # for src in srcs:
-    #     cves = src.cves()
-    #     if cves:
-    #         to_log(cves)
-    #         all_cves[src] = cves
-    mail.to_mail(gtk, all_cves, mail_smtp, mail_user, mail_pass)
+    for src in srcs:
+        cves = src.cves()
+        if cves:
+            to_log(cves)
+            all_cves[src] = cves
+
     if all_cves:
         page.to_page(top)
         mail.to_mail(gtk, all_cves, mail_smtp, mail_user, mail_pass)
