@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Author : EXP
 # @Time   : 2020/4/30 9:37
@@ -38,7 +38,6 @@ def to_page(top_limit = 10):
 
         rows = []
         for cve in cves:
-            log.error("html.__file__ = [%s]" % str(html.__file__))
             row = row_tpl % {
                 'md5': html.escape(cve.md5),
                 'id': html.escape(cve.cves),
