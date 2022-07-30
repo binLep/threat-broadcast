@@ -55,13 +55,13 @@ def to_page(top_limit = 10):
         }
         tables.append(table)
 
-    html = html_tpl % {
+    html_tpl = html_tpl % {
         'datetime': time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) ,
         'table': '\n\n'.join(tables)
     }
     sdbc.close()
 
-    create_html(html)
+    create_html(html_tpl)
 
 
 
@@ -79,9 +79,9 @@ def load_tpl():
 
 
 
-def create_html(html):
+def create_html(html_tpl):
     with open(HTML_PATH, 'w', encoding=config.CHARSET) as file:
-        file.write(html)
+        file.write(html_tpl)
 
 
 
