@@ -32,13 +32,13 @@ def to_page(top_limit = 10):
     conn = sdbc.conn()
 
     tables = []
-    log.error("html.__file__ = [%s]" % html.__file__)
     srcs = query_srcs(conn)
     for src in srcs:
         cves = query_cves(conn, src, top_limit)
 
         rows = []
         for cve in cves:
+            log.error("html.__file__ = [%s]" % str(html.__file__))
             row = row_tpl % {
                 'md5': html.escape(cve.md5),
                 'id': html.escape(cve.cves),
