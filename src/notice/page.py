@@ -38,6 +38,7 @@ def to_page(top_limit = 10):
 
         rows = []
         for cve in cves:
+            print html.__file__
             row = row_tpl % {
                 'md5': html.escape(cve.md5),
                 'id': html.escape(cve.cves),
