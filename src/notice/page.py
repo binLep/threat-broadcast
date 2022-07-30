@@ -14,7 +14,7 @@ from color_log.clog import log
 from pypdm.dbc._sqlite import SqliteDBC
 from src.bean.t_cves import TCves
 from src.dao.t_cves import TCvesDao
-import urllib.parse
+import html
 
 HTML_PATH = '%s/docs/index.html' % config.PRJ_DIR
 HTML_TPL_PATH = '%s/tpl/html.tpl' % config.PRJ_DIR
@@ -39,12 +39,12 @@ def to_page(top_limit = 10):
         rows = []
         for cve in cves:
             row = row_tpl % {
-                'md5': urllib.parse.quote_plus(cve.md5),
-                'id': urllib.parse.quote_plus(cve.cves),
-                'time': urllib.parse.quote_plus(cve.time),
+                'md5': html.escape(cve.md5),
+                'id': html.escape(cve.cves),
+                'time': html.escape(cve.time),
                 'new_flag': ' <img src="imgs/new.gif" />' if (cve.time.startswith(today) or cve.time.startswith(yesterday) or cve.time.startswith(tormorrow)) else '', 
-                'title': urllib.parse.quote_plus(cve.title),
-                'url': urllib.parse.quote_plus(cve.url),
+                'title': html.escape(cve.title),
+                'url': html.escape(cve.url),
             }
             rows.append(row)
 
