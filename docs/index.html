@@ -1,4 +1,4 @@
-<!-- RELEASE TIME : 2022-09-20 03:04:17 -->
+<!-- RELEASE TIME : 2022-09-20 06:17:09 -->
 <html lang="zh-cn">
 
  <head>
@@ -1596,6 +1596,14 @@
       </tr>
 
       <tr>
+       <td>b0e8b8542aefb41928f1229fdc41b006</td>
+       <td>CVE-2022-40674</td>
+       <td>2022-09-14 11:15:54 </td>
+       <td>libexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-40674">详情</a></td>
+      </tr>
+
+      <tr>
        <td>698af9b5d81d0aa753b40cdaab5bdcf2</td>
        <td>CVE-2022-40673</td>
        <td>2022-09-14 11:15:53 </td>
@@ -1609,6 +1617,14 @@
        <td>2022-09-14 11:15:53 </td>
        <td>An unauthenticated user can create a link with reflected Javascript code inside the backurl parameter and send it to other authenticated users in order to create a fake account with predefined login, password and role in Zabbix Frontend.</td>
        <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-40626">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>698af9b5d81d0aa753b40cdaab5bdcf2</td>
+       <td>CVE-2022-40673</td>
+       <td>2022-09-14 11:15:53 </td>
+       <td>KDiskMark before 3.1.0 lacks authorization checking for D-Bus methods such as Helper::flushPageCache.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-40673">详情</a></td>
       </tr>
 
       <tr>
@@ -1641,22 +1657,6 @@
        <td>2022-09-14 11:15:50 </td>
        <td>PayMoney 3.3 is vulnerable to Stored Cross-Site Scripting (XSS) during replying the ticket. The XSS can be obtain from injecting under &amp;quot;Message&amp;quot; field with &amp;quot;description&amp;quot; parameter with the specially crafted payload to gain Stored XSS. The XSS then will prompt after that or can be access from the view ticket function.</td>
        <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-37137">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>8d781ec618177b9f828becf835f45fb0</td>
-       <td>CVE-2022-34831</td>
-       <td>2022-09-14 03:15:08 </td>
-       <td>An issue was discovered in Keyfactor PrimeKey EJBCA before 7.9.0, related to possible inconsistencies in DNS identifiers submitted in an ACME order and the corresponding CSR submitted during finalization. During the ACME enrollment process, an order is submitted containing an identifier for one or multiple dnsNames. These are validated properly in the ACME challenge. However, if the validation passes, a non-compliant client can include additional dnsNames the CSR sent to the finalize endpoint, resulting in EJBCA issuing a certificate including the identifiers that were not validated. This occurs even if the certificate profile is configured to not allow a DN override by the CSR.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34831">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>5d0c6e2f6f8bdf2b01c348fe3a60d0be</td>
-       <td>CVE-2022-37190</td>
-       <td>2022-09-13 23:15:08 </td>
-       <td>CuppaCMS 1.0 is vulnerable to Remote Code Execution (RCE). An authenticated user can control both parameters (action and function) from &amp;quot;/api/index.php.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-37190">详情</a></td>
       </tr>
 
      </tbody>
