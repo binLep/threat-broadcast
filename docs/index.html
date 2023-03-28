@@ -1,4 +1,4 @@
-<!-- RELEASE TIME : 2023-03-28 15:26:14 -->
+<!-- RELEASE TIME : 2023-03-28 17:25:49 -->
 <html lang="zh-cn">
 
  <head>
@@ -284,6 +284,86 @@
        <th width="5%">URL</th>
       </tr>
       <tr>
+       <td>93cf65a094d203f788416c236d13b505</td>
+       <td>CVE-2023-27008</td>
+       <td>2023-03-28 15:15:00 <img src="imgs/new.gif" /></td>
+       <td>A Cross-site scripting (XSS) vulnerability in the function encrypt_password() in login.tmpl.php in ATutor 2.2.1 allows remote attackers to inject arbitrary web script or HTML via the token parameter.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-27008">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>4bcdf5d865633746512dc23fbd03e1a1</td>
+       <td>CVE-2023-26923</td>
+       <td>2023-03-28 15:15:00 <img src="imgs/new.gif" /></td>
+       <td>Musescore 3.0 to 4.0.1 has a stack buffer overflow vulnerability that occurs when reading misconfigured midi files. If attacker can additional information, attacker can execute arbitrary code.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-26923">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>013bf2b0cf5d29b34ee35be16acbf818</td>
+       <td>CVE-2023-0466</td>
+       <td>2023-03-28 15:15:00 <img src="imgs/new.gif" /></td>
+       <td>The function X509_VERIFY_PARAM_add0_policy() is documented to implicitly enable the certificate policy check when doing certificate verification. However the implementation of the function does not enable the check which allows certificates with invalid or incorrect policies to pass the certificate verification. As suddenly enabling the policy check could break existing deployments it was decided to keep the existing behavior of the X509_VERIFY_PARAM_add0_policy() function. Instead the applications that require OpenSSL to perform certificate policy check need to use X509_VERIFY_PARAM_set1_policies() or explicitly enable the policy check by calling X509_VERIFY_PARAM_set_flags() with the X509_V_FLAG_POLICY_CHECK flag argument. Certificate policy checks are disabled by default in OpenSSL and are not commonly used by applications.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-0466">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>b49c8247c460099182ed81e163436e35</td>
+       <td>CVE-2023-0465</td>
+       <td>2023-03-28 15:15:00 <img src="imgs/new.gif" /></td>
+       <td>Applications that use a non-default option when verifying certificates may be vulnerable to an attack from a malicious CA to circumvent certain checks. Invalid certificate policies in leaf certificates are silently ignored by OpenSSL and other certificate policy checks are skipped for that certificate. A malicious CA could use this to deliberately assert invalid certificate policies in order to circumvent policy checking on the certificate altogether. Policy processing is disabled by default but can be enabled by passing the `-policy&#x27; argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()&#x27; function.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-0465">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>489b7f5c1b6f68432186a855f12da681</td>
+       <td>CVE-2023-27701</td>
+       <td>2023-03-28 14:15:00 <img src="imgs/new.gif" /></td>
+       <td>MuYuCMS v2.2 was discovered to contain an arbitrary file deletion vulnerability via the component /database/sqldel.html.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-27701">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>8fa679f0de81a29dc340292fc8ceb313</td>
+       <td>CVE-2023-25260</td>
+       <td>2023-03-28 14:15:00 <img src="imgs/new.gif" /></td>
+       <td>Stimulsoft Designer (Web) 2023.1.3 is vulnerable to Local File Inclusion.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-25260">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>5063c7519b964601973da62f286aba16</td>
+       <td>CVE-2022-3685</td>
+       <td>2023-03-28 14:15:00 <img src="imgs/new.gif" /></td>
+       <td>A vulnerability exists in the SDM600 software. The software operates at a privilege level that is higher than the minimum level required. An attacker who successfully exploits this vulnerability can escalate privileges. This issue affects: All SDM600 versions prior to version 1.3.0. List of CPEs: * cpe:2.3:a:hitachienergy:sdm600:1.0:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.1:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.9002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.10002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.11002.149:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.12002.222:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.13002.72:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.44:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.92:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.108:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.182:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.342:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.447:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.481:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.506:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.566:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.20000.3174:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.291:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.931:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.105:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.23000.291:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.3.0.1339:*:*:*:*:*:*:*</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2022-3685">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>2734aa5e6af0c63980c1d263f5cda90a</td>
+       <td>CVE-2023-28326</td>
+       <td>2023-03-28 13:15:00 <img src="imgs/new.gif" /></td>
+       <td>Vendor: The Apache Software Foundation Versions Affected: Apache OpenMeetings from 2.0.0 before 7.0.0 Description: Attacker can elevate their privileges in any room</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-28326">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>107d38056b5cf45d9aadf33e8f9d5083</td>
+       <td>CVE-2022-47529</td>
+       <td>2023-03-28 13:15:00 <img src="imgs/new.gif" /></td>
+       <td>Insecure Win32 memory objects in Endpoint Windows Agents in RSA NetWitness Platform before 12.2 allow local and admin Windows user accounts to modify the endpoint agent service configuration: to either disable it completely or run user-supplied code or commands, thereby bypassing tamper-protection features via ACL modification.</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2022-47529">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>e4abf5c6253c5ce037dccbc1c06e378d</td>
+       <td>CVE-2022-3686</td>
+       <td>2023-03-28 13:15:00 <img src="imgs/new.gif" /></td>
+       <td>A vulnerability exists in a SDM600 endpoint. An attacker could exploit this vulnerability by running multiple parallel requests, the SDM600 web services become busy rendering the application unresponsive. This issue affects: All SDM600 versions prior to version 1.2 FP3 HF4 (Build Nr. 1.2.23000.291) List of CPEs: * cpe:2.3:a:hitachienergy:sdm600:1.0:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.1:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.9002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.10002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.11002.149:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.12002.222:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.13002.72:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.44:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.92:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.108:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.182:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.257:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.342:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.447:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.481:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.506:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.14002.566:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.20000.3174:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.291:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.931:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.21000.105:*:*:*:*:*:*:* * cpe:2.3:a:hitachienergy:sdm600:1.2.23000.291:*:*:*:*:*:*:*</td>
+       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2022-3686">详情</a></td>
+      </tr>
+
+      <tr>
        <td>e2ed773fc73700dd0cbeb8440715b72b</td>
        <td>CVE-2023-27700</td>
        <td>2023-03-28 01:15:00 <img src="imgs/new.gif" /></td>
@@ -441,86 +521,6 @@
        <td>2023-03-27 17:15:00 <img src="imgs/new.gif" /></td>
        <td>In JetBrains TeamCity before 2022.10.3 stored XSS on “Pending changes” and “Changes” tabs was possible</td>
        <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2022-48427">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>d20da38f6731371e0686297b604ed9bb</td>
-       <td>CVE-2023-27847</td>
-       <td>2023-03-27 16:15:00 <img src="imgs/new.gif" /></td>
-       <td>SQL injection vulnerability found in PrestaShop xipblog v.2.0.1 and before allow a remote attacker to gain privileges via the xipcategoryclass and xippostsclass components.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-27847">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>6d72430f9255b3c50e7a29078a425731</td>
-       <td>CVE-2023-1654</td>
-       <td>2023-03-27 16:15:00 <img src="imgs/new.gif" /></td>
-       <td>Denial of Service in GitHub repository gpac/gpac prior to 2.4.0.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1654">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>b25f50e90fbf6ac6f3c943de346bc1fb</td>
-       <td>CVE-2023-1400</td>
-       <td>2023-03-27 16:15:00 <img src="imgs/new.gif" /></td>
-       <td>The Modern Events Calendar Lite WordPress plugin through 5.16.2 does not sanitise and escape some of its settings, which could allow high privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1400">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>dffab7eb6a9615b2a4b3c2ddb41d350d</td>
-       <td>CVE-2023-1399</td>
-       <td>2023-03-27 16:15:00 <img src="imgs/new.gif" /></td>
-       <td>N6854A Geolocation Server versions 2.4.2 are vulnerable to untrusted data deserialization, which may allow a malicious actor to escalate privileges in the affected device’s default configuration and achieve remote code execution.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1399">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>58336e84651e8c6c4b60c158dd027374</td>
-       <td>CVE-2023-1093</td>
-       <td>2023-03-27 16:15:00 <img src="imgs/new.gif" /></td>
-       <td>The OAuth Single Sign On WordPress plugin before 6.24.2 does not have CSRF checks when discarding Identify providers (IdP), which could allow attackers to make logged in admins delete all IdP via a CSRF attack</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1093">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>492261a5f7fd55e36ee520e15ad30994</td>
-       <td>CVE-2023-27296</td>
-       <td>2023-03-27 15:15:00 <img src="imgs/new.gif" /></td>
-       <td>Deserialization of Untrusted Data vulnerability in Apache Software Foundation Apache InLong. It could be triggered by authenticated users of InLong, you could refer to [1] to know more about this vulnerability. This issue affects Apache InLong: from 1.1.0 through 1.5.0. Users are advised to upgrade to Apache InLong&#x27;s latest version or cherry-pick [2] to solve it. [1] https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html [2] https://github.com/apache/inlong/pull/7422 https://github.com/apache/inlong/pull/7422</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-27296">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>7e523cb98e731940d490c33140bb1775</td>
-       <td>CVE-2023-22707</td>
-       <td>2023-03-27 15:15:00 <img src="imgs/new.gif" /></td>
-       <td>Auth. (author+) Cross-Site Scripting (XSS) vulnerability in Wpsoul Greenshift – animation and page builder blocks plugin &lt;= 4.9.9 versions.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-22707">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>c7535bcb113ddce9201cce0bb313cad8</td>
-       <td>CVE-2023-1659</td>
-       <td>2023-03-27 15:15:00 <img src="imgs/new.gif" /></td>
-       <td>This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1659">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>433088ad51697e3507c71f4c11838419</td>
-       <td>CVE-2023-1655</td>
-       <td>2023-03-27 15:15:00 <img src="imgs/new.gif" /></td>
-       <td>Heap-based Buffer Overflow in GitHub repository gpac/gpac prior to 2.4.0.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1655">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>ee441d60794bbe8f2e3af3b1fe0762b4</td>
-       <td>CVE-2023-1145</td>
-       <td>2023-03-27 15:15:00 <img src="imgs/new.gif" /></td>
-       <td>Delta Electronics InfraSuite Device Master versions prior to 1.0.5 are affected by a deserialization vulnerability targeting the Device-DataCollect service, which could allow deserialization of requests prior to authentication, resulting in remote code execution.</td>
-       <td><a target="_blank" href="https://www.tenable.com/cve/CVE-2023-1145">详情</a></td>
       </tr>
 
      </tbody>
@@ -1548,6 +1548,14 @@
       </tr>
 
       <tr>
+       <td>9df1a9540f2201c2580d2a560d6b71dc</td>
+       <td>CVE-2023-23192</td>
+       <td>2023-03-23 02:15:12 </td>
+       <td>IS Decisions UserLock MFA 11.01 is vulnerable to authentication bypass using scheduled task.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-23192">详情</a></td>
+      </tr>
+
+      <tr>
        <td>067239d2be81495ca13a4cb45a8f7d67</td>
        <td>CVE-2023-22271</td>
        <td>2023-03-22 17:15:14 </td>
@@ -1721,14 +1729,6 @@
        <td>2023-03-22 13:15:10 </td>
        <td>A vulnerability has been found in DataGear up to 1.11.1 and classified as problematic. This vulnerability affects unknown code of the component Plugin Handler. The manipulation leads to cross site scripting. It is possible to launch the attack on the local host. The exploit has been disclosed to the public and may be used. Upgrading to version 1.12.0 is able to address this issue. It is recommended to upgrade the affected component. The identifier of this vulnerability is VDB-223564.</td>
        <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1572">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>a2b00ed519c4166ebc9c5d6582e7d4ae</td>
-       <td>CVE-2023-1565</td>
-       <td>2023-03-22 13:15:09 </td>
-       <td>A vulnerability was found in FeiFeiCMS 2.7.130201. It has been classified as problematic. This affects an unknown part of the file \Public\system\slide_add.html of the component Extension Tool. The manipulation leads to cross site scripting. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. The identifier VDB-223557 was assigned to this vulnerability.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1565">详情</a></td>
       </tr>
 
      </tbody>
