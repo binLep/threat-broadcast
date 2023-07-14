@@ -1,4 +1,4 @@
-<!-- RELEASE TIME : 2023-07-14 16:31:31 -->
+<!-- RELEASE TIME : 2023-07-14 18:30:45 -->
 <html lang="zh-cn">
 
  <head>
@@ -540,6 +540,22 @@
        <th width="5%">URL</th>
       </tr>
       <tr>
+       <td>3558380acfa891e9b40ee6fb92267bbb</td>
+       <td>CNNVD-202307-1275 (CVE-2023-37849)</td>
+       <td>2023-07-13 18:30:43 <img src="imgs/new.gif" /></td>
+       <td>Panda Security VPN 安全漏洞</td>
+       <td><a target="_blank" href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202307-1275">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>e9d2d1c580d86d56e0b1918886dba00a</td>
+       <td>CNNVD-202307-1279 (CVE-2023-37836)</td>
+       <td>2023-07-13 18:30:34 <img src="imgs/new.gif" /></td>
+       <td>libjpeg 安全漏洞</td>
+       <td><a target="_blank" href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202307-1279">详情</a></td>
+      </tr>
+
+      <tr>
        <td>05b404990b04b924d1a94530d0c0b6b5</td>
        <td>CNNVD-202307-1277 (CVE-2023-37273)</td>
        <td>2023-07-13 15:27:30 <img src="imgs/new.gif" /></td>
@@ -761,22 +777,6 @@
        <td>2023-07-10 19:23:03</td>
        <td>Palantir Foundry 安全漏洞</td>
        <td><a target="_blank" href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202307-674">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>cfc7a58fd6b2a78971fa156b990682b0</td>
-       <td>CNNVD-202307-671 (CVE-2023-24489)</td>
-       <td>2023-07-10 16:35:31</td>
-       <td>Citrix Systems Content Collaboration 安全漏洞</td>
-       <td><a target="_blank" href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202307-671">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>940064871cf6671087a26fb048d81ab4</td>
-       <td>CNNVD-202307-673 (CVE-2023-30960)</td>
-       <td>2023-07-10 16:34:26</td>
-       <td>Palantir Foundry job-tracker 安全漏洞</td>
-       <td><a target="_blank" href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202307-673">详情</a></td>
       </tr>
 
      </tbody>
@@ -1620,6 +1620,30 @@
       </tr>
 
       <tr>
+       <td>abcf6a83b62a8a99f335326f75cc3721</td>
+       <td>CVE-2023-1901</td>
+       <td>2023-07-10 16:15:49 </td>
+       <td>The bluetooth HCI host layer logic not clearing a global reference to a semaphore after synchronously sending HCI commands may allow a malicious HCI Controller to cause the use of a dangling reference in the host layer, leading to a crash (DoS) or potential RCE on the Host layer.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1901">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>f06f0a3d694061b1bc58bc0a8798c819</td>
+       <td>CVE-2023-1780</td>
+       <td>2023-07-10 16:15:48 </td>
+       <td>The Companion Sitemap Generator WordPress plugin before 4.5.3 does not sanitise and escape some parameters before outputting them back in pages, leading to Reflected Cross-Site Scripting which could be used against high privilege users such as admin.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1780">详情</a></td>
+      </tr>
+
+      <tr>
+       <td>1c4aa2491e9583dc9c9a596a43731bc5</td>
+       <td>CVE-2023-1208</td>
+       <td>2023-07-10 16:15:48 </td>
+       <td>This HTTP Headers WordPress plugin before 1.18.11 allows arbitrary data to be written to arbitrary files, leading to a Remote Code Execution vulnerability.</td>
+       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1208">详情</a></td>
+      </tr>
+
+      <tr>
        <td>10d0b59486d72c28874ba54f7ff962d9</td>
        <td>CVE-2023-20899</td>
        <td>2023-07-06 23:15:09 </td>
@@ -1713,30 +1737,6 @@
        <td>2023-07-06 15:15:15 </td>
        <td>Multiple buffer overflow vulnerabilities exist in the vtysh_ubus binary of Milesight UR32L v32.3.0.5 due to the use of an unsafe sprintf pattern. A specially crafted HTTP request can lead to a buffer overflow. An attacker can send HTTP requests to trigger these vulnerabilities.This buffer overflow occurs in the set_openvpn_client function with the local_virtual_ip and the local_virtual_mask variables.</td>
        <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25117">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>c040156f1e3d214dbf770c9313db4d09</td>
-       <td>CVE-2023-30326</td>
-       <td>2023-07-06 15:15:15 </td>
-       <td>Cross Site Scripting (XSS) vulnerability in username field in /WebContent/WEB-INF/lib/chatbox.jsp in wliang6 ChatEngine commit fded8e710ad59f816867ad47d7fc4862f6502f3e, allows attackers to execute arbitrary code.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-30326">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>426718fc7b440784affc15fa6a110d69</td>
-       <td>CVE-2023-30325</td>
-       <td>2023-07-06 15:15:15 </td>
-       <td>SQL Injection vulnerability in textMessage parameter in /src/chatbotapp/chatWindow.java in wliang6 ChatEngine v.1.0, allows attackers to gain sensitive information.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-30325">详情</a></td>
-      </tr>
-
-      <tr>
-       <td>98f1c5c9245c51c5bfc6a3454f0d345e</td>
-       <td>CVE-2023-25583</td>
-       <td>2023-07-06 15:15:15 </td>
-       <td>Two OS command injection vulnerabilities exist in the zebra vlan_name functionality of Milesight UR32L v32.3.0.5. A specially crafted network request can lead to command execution. An attacker can send a network request to trigger these vulnerabilities.This command injection is in the code branch that manages a new vlan configuration.</td>
-       <td><a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25583">详情</a></td>
       </tr>
 
      </tbody>
